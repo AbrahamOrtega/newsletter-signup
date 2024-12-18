@@ -7,9 +7,18 @@ export default function SubscribeForm(props: {
   const [email, setEmail] = useState("");
 
   return (
-    <div className="flex bg-white rounded-[24px] p-6">
-      <div className="flex flex-col w-1/2 justify-center mx-6 my-6 gap-y-6">
-        <h1 className="text-nowrap text-[48px] font-[700] text-center">
+    <div className="flex flex-col lg:flex-row bg-white w-full lg:rounded-[24px] lg:p-6 lg:w-fit">
+      <div className="lg:hidden flex max-w-[500px] mx-auto">
+        <Image
+          src={"/images/illustration-sign-up-mobile.svg"}
+          alt=""
+          width={800}
+          height={800}
+        />
+      </div>
+
+      <div className="flex flex-col w-full max-w-[500px] px-8 mt-8 mx-auto lg:w-1/2 justify-center lg:px-0 lg:mx-6 lg:my-6 gap-y-6">
+        <h1 className="text-nowrap text-[48px] font-[700] lg:text-center">
           Stay updated!
         </h1>
         <p className="text-[16px]">
@@ -71,7 +80,7 @@ export default function SubscribeForm(props: {
           </button>
         </div>
       </div>
-      <div className="flex w-1/2 justify-end">
+      <div className="hidden lg:flex w-1/2 justify-end">
         <Image
           src="/images/illustration-sign-up-desktop.svg"
           alt="Newsletter signup"

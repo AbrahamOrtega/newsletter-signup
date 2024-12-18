@@ -6,7 +6,7 @@ export default function Home() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <div className="flex min-h-screen w-full bg-charcoalGrey justify-center items-center">
+    <div className="flex min-h-screen w-full bg-charcoalGrey lg:justify-center lg:items-center">
       {submitted ? (
         <SubscribeSumit setSubmitted={setSubmitted} />
       ) : (
