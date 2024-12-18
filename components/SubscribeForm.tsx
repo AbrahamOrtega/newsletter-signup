@@ -1,8 +1,11 @@
 import Image from "next/image";
+import { useState } from "react";
 
 export default function SubscribeForm(props: {
   setSubmitted: (submitted: boolean) => void;
 }) {
+  const [email, setEmail] = useState("");
+
   return (
     <div className="flex bg-white rounded-[24px] p-6">
       <div className="flex flex-col w-1/2 justify-center mx-6 gap-y-4">
@@ -50,12 +53,18 @@ export default function SubscribeForm(props: {
             type="email"
             id="email"
             name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address"
-            className="rounded-[8px] p-4 outline-tomato bg-slate-100 mt-2"
+            required
+            className="rounded-[8px] peer p-4 outline-strawberry bg-slate-100 mt-2"
           />
+          <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+            Please provide a valid email address.
+          </p>
 
           <button
-            className="rounded-[8px] bg-gradient-to-l text-white p-4 mt-4 shadow-lg hover:from-strawberry hover:to-tomato from-darkSlateGrey to-charcoalGrey"
+            className="peer-invalid:pointer-events-none peer-invalid:opacity-80 rounded-[8px] bg-gradient-to-l text-white p-4 mt-4 shadow-lg hover:from-strawberry hover:to-tomato from-darkSlateGrey to-charcoalGrey"
             onClick={() => props.setSubmitted(true)}
           >
             Subscribe to monthly newsletter
