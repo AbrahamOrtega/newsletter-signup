@@ -8,7 +8,7 @@ export default function SubscribeForm(props: {
 
   return (
     <div className="flex bg-white rounded-[24px] p-6">
-      <div className="flex flex-col w-1/2 justify-center mx-6 gap-y-4">
+      <div className="flex flex-col w-1/2 justify-center mx-6 my-6 gap-y-6">
         <h1 className="text-nowrap text-[48px] font-[700] text-center">
           Stay updated!
         </h1>
@@ -45,8 +45,8 @@ export default function SubscribeForm(props: {
           </li>
         </ul>
 
-        <div className="flex flex-col">
-          <label htmlFor="email" className="text-[16px]">
+        <div className="flex flex-col relative">
+          <label htmlFor="email" className="text-[14px]">
             Email address
           </label>
           <input
@@ -57,14 +57,14 @@ export default function SubscribeForm(props: {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address"
             required
-            className="rounded-[8px] peer p-4 outline-strawberry bg-slate-100 mt-2"
-          />
-          <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
-            Please provide a valid email address.
+            className="rounded-[8px] peer p-4 outline-strawberry bg-slate-100 mt-2 invalid:bg-tomato/20 invalid:outline-tomato/50 invalid:text-tomato"
+          ></input>
+          <p className="absolute text-[14px] right-0 invisible peer-invalid:visible text-tomato">
+            Valid email required
           </p>
 
           <button
-            className="peer-invalid:pointer-events-none peer-invalid:opacity-80 rounded-[8px] bg-gradient-to-l text-white p-4 mt-4 shadow-lg hover:from-strawberry hover:to-tomato from-darkSlateGrey to-charcoalGrey"
+            className="peer-invalid:pointer-events-none peer-invalid:opacity-80 rounded-[8px] bg-gradient-to-l text-white p-4 mt-8 shadow-lg hover:from-strawberry hover:to-tomato from-darkSlateGrey to-charcoalGrey"
             onClick={() => props.setSubmitted(true)}
           >
             Subscribe to monthly newsletter
